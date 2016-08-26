@@ -9,7 +9,13 @@ function navigate(){
 	if(url.indexOf('https')==-1){
 		url = 'https://' + url;
 	}
-	sess.relocate(url);
+
+	if(!swapped%2){
+		sess.relocate(url);
+	} else {
+		frame  = document.getElementById("ifrm1").contentWindow;
+  		frame.postMessage(JSON.stringify({"command": "message", "data": "relocation_swap" + url}), '*');
+	}
 }
 
 // exit session function
@@ -35,6 +41,13 @@ function badReaction() {
   frame  = document.getElementById("ifrm1").contentWindow;
   frame.postMessage(JSON.stringify({"command": "message", "data": "bad"}), '*');
   update_feed("You sent negative vibes!");
+}
+
+// swap request
+function swapRequest() {
+  $("#dialog").dialog("open");
+  frame  = document.getElementById("ifrm1").contentWindow;
+  frame.postMessage(JSON.stringify({"command": "message", "data": "swap_request"}), '*');
 }
 
 // ignore/acknowledge friend button
@@ -128,6 +141,33 @@ window.addEventListener('message', function(e){
                         reactionFrame.style.visibility="visible";
 		        // the frame is hidden after 3 seconds 
 		        setTimeout(function() {reactionFrame.style.visibility = "hidden";}, 3000);
+		}
+
+		// control swap request
+               if (string.match(/(swap_request)/)) {
+			$("#dialog-confirm").dialog("open");
+		}
+
+		// control swap accepted
+               if (string.match(/(swap_accepted)/)) {
+			update_feed("Your friend accepted your swap request!");
+		        sess.giveControl(1);
+			swapped++;
+		}
+
+	        // control swap denied
+		if (string.match(/(swap_denied)/)) {
+			update_feed("Your friend denied your swap request!");
+		}
+		
+		// relocation (if swapped)
+		if (string.match(/(relocation_swap)/)) {
+			if(string.indexOf('warning')==-1){
+				var index = string.indexOf('relocation_swap');
+				var index_end = string.indexOf('origin');
+				var relo_url = string.substring(index+15, index_end-3);	
+				sess.relocate(relo_url);
+			}
 		}
     	}
      }

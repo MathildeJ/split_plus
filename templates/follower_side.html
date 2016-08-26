@@ -14,6 +14,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 
+<!-- import for .dialog() -->
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+
+<!-- jQuery splitter plugin -->
+<script type="text/javascript" src="../static/jquery.splitter-master/js/jquery.splitter.js" ></script>
+<link href="../static/jquery.splitter-master/css/jquery.splitter.css" rel="stylesheet"/>
+
 <!-- js file -->
 <script type="text/javascript" src="../static/splitscreen.js" ></script>
 
@@ -94,6 +103,14 @@ window.addEventListener('DOMContentLoaded', function() {
 <!-- the reaction is seen in this iframe -->
 <div class="box"><iframe align='left' id="reaction" src="" height="300" width="300"></iframe></div>
 
+<div id="dialog" title="Control swap request" style="display:none;">
+  <p>You asked for a control swap, waiting for your friend's response...</p>
+</div>
+
+<div id="dialog-confirm" title="Swap control?" style="display:none;">
+  <p><span class="ui-icon ui-icon-alert"></span>Your friend wants to swap control!</p>
+</div>
+
 <script>
 // get the current url and the follower link
 pageUrl  = document.location.href;
@@ -104,8 +121,8 @@ var fullUrl =  "https://surfly.com".concat(sessionID);
 document.getElementById('ifrm2').src = fullUrl;
 </script>
 
-<!-- define form behaviour -->
-<script type="text/javascript" src="../static/form.js" ></script>
+<!-- jQuery script -->
+<script type="text/javascript" src="../static/split.js" ></script>
 
 </body>
 </html>

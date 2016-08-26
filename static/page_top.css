@@ -2,10 +2,7 @@ body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
 
-#exit_button {
-	position: relative;
-	/*visibility:hidden;*/
-	float: right;
+.button { 	
 	background-color: #ea2020;
 	border: 2px solid black;
 	color: black;
@@ -15,27 +12,23 @@ body {
 	font-size: 16px;
 	margin: 0 auto;
 	cursor: pointer;
-	height: 27px;
 	margin-top: 3px;
 	margin-right: 5px;
         font-weight: bold;
 	border-radius: 8px;
+	height: 27px;
+	display: inline-block;
 }
 
-.button { 	
-	background-color: #ea2020;
-	border: 2px solid black;
-	color: black;
-	text-align: center;
-	text-decoration: none;
-	font-size: 16px;
-	margin: 0 auto;
-	cursor: pointer;
-	margin-top: 3px;
-	margin-right: 5px;
-        font-weight: bold;
-	border-radius: 8px;
+#exit_button {
+	position: relative;
+	float: right;
 }
+
+#ignore {	
+	margin-left: 5px;
+}
+
 
 #form_wrapper{
 	display: inline-block;
@@ -94,32 +87,11 @@ body {
 	visibility: hidden;
 }
 
-#ignore {
-	position: relative;
-	float: right;
-	/*visibility:hidden;*/
-	background-color: #ea2020;
-	border: 2px solid black;
-	color: black;
-	padding: 3px 7px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 0 auto;
-	cursor: pointer;
-	margin-top: 3px;
-	margin-right: 5px;
-        font-weight: bold;
-	border-radius: 8px;
-	height: 27px;	
-	margin-left: 5px;
-}
+
 
 #invite {
 	position: relative;
 	float: right;
-	/*visibility:hidden;*/
 	background-color: #ea2020;
 	border: 2px solid black;
 	color: black;
@@ -146,13 +118,11 @@ body {
 	width: 50%;
 	position: fixed;
 	left: 25%;
-	/*visibility:hidden;*/
 	max-height: 30px;
 }
 
-#badReaction {
+.reaction {
        position: relative;
-	/*visibility:hidden;*/
        float: right;
        margin-top: 5px;
        margin-right: 5px;
@@ -160,33 +130,15 @@ body {
        width: 27px;
        background: transparent;
        border: none;
-       background-image:url('./thumb_down.png');
        background-size: cover;
+}
+#badReaction {
+       background-image:url('./thumb_down.png');
 }
 
 #goodReaction {
-       position: relative;
-	/*visibility:hidden;*/
-       float: right;
-       margin-top: 5px;
-       margin-right: 5px;
-       height: 27px;
-       width: 27px;
-       background: transparent;
-       border: none;  
-       background-image:url('./thumb_up.png');
-       background-size:cover;     
+       background-image:url('./thumb_up.png'); 
 }
-
-/*
-#popupLink {
-	top: 30%; 
-	left: 35%; 
-	display: block; 
-	position: absolute; 
-	visibility:hidden
-}
-*/
 
 #reaction {
 	display: block; 
