@@ -145,6 +145,7 @@ window.addEventListener('message', function(e){
 
 		// control swap request
                if (string.match(/(swap_request)/)) {
+			console.log(string);
 			$("#dialog-confirm").dialog("open");
 		}
 
