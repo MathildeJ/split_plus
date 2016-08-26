@@ -18,9 +18,6 @@ body {
 	border-radius: 8px;
 	height: 27px;
 	display: inline-block;
-}
-
-#exit_button {
 	position: relative;
 	float: right;
 }
@@ -28,7 +25,6 @@ body {
 #ignore {	
 	margin-left: 5px;
 }
-
 
 #form_wrapper{
 	display: inline-block;
@@ -85,29 +81,6 @@ body {
 
 #menu_right {
 	visibility: hidden;
-}
-
-
-
-#invite {
-	position: relative;
-	float: right;
-	background-color: #ea2020;
-	border: 2px solid black;
-	color: black;
-	padding: 3px 7px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 0 auto;
-	cursor: pointer;
-	margin-top: 3px;
-	margin-right: 5px;
-	margin-left: 50px;
-        font-weight: bold;
-	border-radius: 8px;
-	height: 27px;
 }
 
 #nav {
