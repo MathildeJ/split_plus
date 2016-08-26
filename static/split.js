@@ -1,4 +1,4 @@
-//var splitter;
+var splitter;
 $(document).ready(function(){
 	// swap control dialog (informs that request has been sent)
 	$("#dialog").dialog({
