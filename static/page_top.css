@@ -22,7 +22,7 @@ body {
 	float: right;
 }
 
-#ignore {	
+#ignore, #stretch, #swap {	
 	margin-left: 5px;
 }
 
