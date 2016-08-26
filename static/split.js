@@ -1,4 +1,4 @@
-var splitter;
+//var splitter;
 $(document).ready(function(){
 	// swap control dialog (informs that request has been sent)
 	$("#dialog").dialog({
@@ -20,12 +20,12 @@ $(document).ready(function(){
   		  frame = document.getElementById("ifrm1").contentWindow;
   		  frame.postMessage(JSON.stringify({"command": "message", "data": "swap_accepted"}), '*');
 		  swapped++;
-		  $(this).dialog( "close" );
+		  $(this).dialog("close");
 		},
 		Cancel: function() {
 		  frame = document.getElementById("ifrm1").contentWindow;
   		  frame.postMessage(JSON.stringify({"command": "message", "data": "swap_denied"}), '*');
-		  $(this).dialog( "close" );
+		  $(this).dialog("close");
 		}
 	      }
 	});

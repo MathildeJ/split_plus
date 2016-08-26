@@ -48,6 +48,7 @@ function swapRequest() {
   $("#dialog").dialog("open");
   frame  = document.getElementById("ifrm1").contentWindow;
   frame.postMessage(JSON.stringify({"command": "message", "data": "swap_request"}), '*');
+  console.log('message sent');
 }
 
 // ignore/acknowledge friend button
@@ -116,7 +117,7 @@ window.addEventListener('message', function(e){
 		}
 		
 		// get current url (received from leader side)
-		if(string.indexOf('cobro_event') && (string.indexOf("Current url")!==-1)){
+		if(string.indexOf("Current url")!==-1){
 			var index = string.indexOf('data');
 			var indexEnd = string.indexOf('origin');	
 			var info = string.substring(index+9, indexEnd-5);
@@ -145,7 +146,7 @@ window.addEventListener('message', function(e){
 
 		// control swap request
                if (string.match(/(swap_request)/)) {
-			console.log(string);
+			console.log("swap request: " + string);
 			$("#dialog-confirm").dialog("open");
 		}
 
