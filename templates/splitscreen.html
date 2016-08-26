@@ -14,6 +14,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 
+<!-- js file -->
+<script type="text/javascript" src="../static/splitscreen.js" ></script>
+
 <!-- import for .dialog() -->
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
@@ -23,8 +26,6 @@
 <script type="text/javascript" src="../static/jquery.splitter-master/js/jquery.splitter.js" ></script>
 <link href="../static/jquery.splitter-master/css/jquery.splitter.css" rel="stylesheet"/>
 
-<!-- js file -->
-<script type="text/javascript" src="../static/splitscreen.js" ></script>
 
 
 <script>
@@ -38,7 +39,7 @@ l.src='https://surfly.com/surfly.js';y.parentNode.insertBefore(l,y);})
 var sess;
 var inviteLink;
 var lastUrl;
-//var swapped=0;
+var swapped=0;
 
 var settings = {widgetkey:'b84defc4621441ecae5eb10bdec1cb5a', block_until_agent_joins: false, ui_off: true, set_to_smallest: false};
 window.addEventListener('DOMContentLoaded', function() {
@@ -102,7 +103,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	<div id="menu_right">
 		<button class="button" id="exit_button" onclick="exitSession()">Exit</button>
 		<button class="button" id="ignore" onclick="ignoreFriend()">Ignore Friend</button>
-		<!--<button class="button" id="stretch">Stretch</button>-->
+		<button class="button" id="stretch">Stretch</button>
 		<button class="button" id="swap" onclick="swapRequest()">Swap</button>
 		<button id="goodReaction" class="reaction" onclick="goodReaction()"></button>
 		<button id="badReaction" class="reaction" onclick="badReaction()"></button>
@@ -110,7 +111,6 @@ window.addEventListener('DOMContentLoaded', function() {
 			<p id="news_feed"></p>
 		</div>
 	</div>
-	<button class="button" id="stretch">Stretch</button>
 	<div id="form_wrapper">
 		<form id="nav" action="" method="post">
 			<label style="float:left">

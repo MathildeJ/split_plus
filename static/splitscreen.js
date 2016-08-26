@@ -1,5 +1,3 @@
-var swapped;
-
 // navigate to a new url
 function navigate(){
 	var url = document.getElementById('url').value;

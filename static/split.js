@@ -1,9 +1,28 @@
 var splitter;
 $(document).ready(function(){
+	
 	// swap control dialog (informs that request has been sent)
 	$("#dialog").dialog({
 		autoOpen: false
 	});
+
+	// resizable
+	$('#stretch').click(function(){
+		if($('#stretch').html()=="Stretch"){
+			if(!splitter){
+				$('#ifrm1, #ifrm2').css("width", "100%");
+				splitter = $('#container_resize').height(700).split({
+					    orientation: 'vertical',
+					    limit: '200',
+					    position: '50%'
+				});
+			}
+			document.getElementById("stretch").innerHTML = "Reset";
+		} else {
+			splitter.position("50%");
+		}
+	});
+
 
 	// swap request 
 	var me = this;
@@ -30,23 +49,6 @@ $(document).ready(function(){
 	      }
 	});
 	
-	// resizable
-	$('#stretch').click(function(){
-		if($('#stretch').html()=="Stretch"){
-			if(!splitter){
-				$('#ifrm1, #ifrm2').css("width", "100%");
-				splitter = $('#container_resize').height(700).split({
-					    orientation: 'vertical',
-					    limit: '200',
-					    position: '50%'
-				});
-			}
-			document.getElementById("stretch").innerHTML = "Reset";
-		} else {
-			splitter.position("50%");
-		}
-	});
-
 	// form
 	$('#url').focus(function() { 
   		$(this).val(''); 
