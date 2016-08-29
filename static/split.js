@@ -35,7 +35,6 @@ $(document).ready(function(){
 	      modal: true,
 	      buttons: {
 		"Accept": function() {
-                  console.log('test accept request: ' + swapped);
 		  if(swapped%2==0){
 		        sess.giveControl(1);
  		  } else {

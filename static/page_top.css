@@ -28,7 +28,7 @@ body {
 
 #form_wrapper{
 	display: inline-block;
-	width: 450px;
+	width: 300px;
 	position: fixed;
 	left: -6.5%;
 	visibility: hidden; 

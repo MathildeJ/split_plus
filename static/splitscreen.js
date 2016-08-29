@@ -1,5 +1,3 @@
-//var swapped=0;
-
 // navigate to a new url
 function navigate(){
 	var url = document.getElementById('url').value;
@@ -153,8 +151,6 @@ window.addEventListener('message', function(e){
                if (string.match(/(swap_accepted)/)) {
 			if(string.indexOf('warning')==-1){
 				update_feed("Your friend accepted your swap request!");
-				console.log('test swap accepted: ' + swapped);
-				console.log(string);
 				if(swapped%2==0){
 					sess.giveControl(1);
 	 			} else {
