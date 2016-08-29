@@ -156,9 +156,9 @@ window.addEventListener('message', function(e){
 				console.log('test swap accepted: ' + swapped);
 				console.log(string);
 				if(swapped%2==0){
-					sess.giveControl(1);
-	 			} else {
 					sess.giveControl(0);
+	 			} else {
+					sess.giveControl(1);
 				}
 				swapped++;
 			//}
