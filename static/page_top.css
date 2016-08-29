@@ -28,7 +28,7 @@ body {
 
 #form_wrapper{
 	display: inline-block;
-	/*width: 300px;*/
+	width: 450px;
 	position: fixed;
 	left: -6.5%;
 	visibility: hidden; 
@@ -88,10 +88,10 @@ body {
 }
 
 #feed {
-	width: 50%;
+	width: 25%;
 	position: fixed;
-	left: 25%;
-	max-height: 30px;
+	left: 18%;
+	max-height: 35px;
 }
 
 .reaction {
