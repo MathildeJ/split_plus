@@ -35,7 +35,12 @@ $(document).ready(function(){
 	      modal: true,
 	      buttons: {
 		"Accept": function() {
-		  sess.giveControl(1);
+                  console.log(swapped);
+		  if(!swapped%2){
+		        sess.giveControl(0);
+ 		  } else {
+			sess.giveControl(1);
+	          }
   		  frame = document.getElementById("ifrm1").contentWindow;
   		  frame.postMessage(JSON.stringify({"command": "message", "data": "swap_accepted"}), '*');
 		  swapped++;

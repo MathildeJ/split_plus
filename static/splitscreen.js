@@ -9,7 +9,7 @@ function navigate(){
 	if(url.indexOf('https')==-1){
 		url = 'https://' + url;
 	}
-
+	console.log('test: ' + swapped);
 	if(!swapped%2){
 		sess.relocate(url);
 	} else {
@@ -153,7 +153,11 @@ window.addEventListener('message', function(e){
 		// control swap accepted
                if (string.match(/(swap_accepted)/)) {
 			update_feed("Your friend accepted your swap request!");
-		        sess.giveControl(1);
+			if(!swapped%2){
+		        	sess.giveControl(0);
+ 			} else {
+				sess.giveControl(0);
+			}
 			swapped++;
 		}
 
