@@ -151,17 +151,17 @@ window.addEventListener('message', function(e){
 
 		// control swap accepted
                if (string.match(/(swap_accepted)/)) {
-			//if(string.indexOf('warning')==-1){
+			if(string.indexOf('warning')==-1){
 				update_feed("Your friend accepted your swap request!");
 				console.log('test swap accepted: ' + swapped);
 				console.log(string);
 				if(swapped%2==0){
-					sess.giveControl(0);
-	 			} else {
 					sess.giveControl(1);
+	 			} else {
+					sess.giveControl(0);
 				}
 				swapped++;
-			//}
+			}
 		}
 
 	        // control swap denied
