@@ -36,7 +36,7 @@ $(document).ready(function(){
 	      buttons: {
 		"Accept": function() {
                   console.log('test: ' + swapped);
-		  if(!swapped%2){
+		  if(swapped%2===0){
 		        sess.giveControl(1);
  		  } else {
 			sess.giveControl(0);
