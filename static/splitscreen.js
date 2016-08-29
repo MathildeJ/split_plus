@@ -1,4 +1,4 @@
-var swapped=0;
+//var swapped=0;
 
 // navigate to a new url
 function navigate(){
@@ -49,7 +49,6 @@ function swapRequest() {
   $("#dialog").dialog("open");
   frame  = document.getElementById("ifrm1").contentWindow;
   frame.postMessage(JSON.stringify({"command": "message", "data": "swap_request"}), '*');
-  console.log('message sent');
 }
 
 // ignore/acknowledge friend button
@@ -156,7 +155,7 @@ window.addEventListener('message', function(e){
 				update_feed("Your friend accepted your swap request!");
 				console.log('test swap accepted: ' + swapped);
 				console.log(string);
-				if(swapped%2===0){
+				if(swapped%2==0){
 					sess.giveControl(1);
 	 			} else {
 					sess.giveControl(0);

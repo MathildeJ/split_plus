@@ -36,14 +36,14 @@ $(document).ready(function(){
 	      buttons: {
 		"Accept": function() {
                   console.log('test accept request: ' + swapped);
-		  if(swapped%2===0){
+		  if(swapped%2==0){
 		        sess.giveControl(1);
  		  } else {
 			sess.giveControl(0);
 	          }
   		  frame = document.getElementById("ifrm1").contentWindow;
   		  frame.postMessage(JSON.stringify({"command": "message", "data": "swap_accepted"}), '*');
-		  //swapped++;
+		  swapped++;
 		  $(this).dialog("close");
 		},
 		Cancel: function() {
