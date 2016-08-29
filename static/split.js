@@ -37,13 +37,13 @@ $(document).ready(function(){
 		"Accept": function() {
                   console.log('test: ' + swapped);
 		  if(!swapped%2){
-		        sess.giveControl(0);
+		        sess.giveControl(1);
  		  } else {
-			sess.giveControl(1);
+			sess.giveControl(0);
 	          }
   		  frame = document.getElementById("ifrm1").contentWindow;
   		  frame.postMessage(JSON.stringify({"command": "message", "data": "swap_accepted"}), '*');
-		  swapped++;
+		  //swapped++;
 		  $(this).dialog("close");
 		},
 		Cancel: function() {
