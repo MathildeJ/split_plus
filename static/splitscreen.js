@@ -11,7 +11,6 @@ function navigate(){
 	if(url.indexOf('https')==-1){
 		url = 'https://' + url;
 	}
-	console.log('test: ' + swapped);
 	if(!swapped%2){
 		sess.relocate(url);
 	} else {
@@ -148,22 +147,22 @@ window.addEventListener('message', function(e){
 
 		// control swap request
                if (string.match(/(swap_request)/)) {
-			console.log("swap request: " + string);
 			$("#dialog-confirm").dialog("open");
 		}
 
 		// control swap accepted
                if (string.match(/(swap_accepted)/)) {
-			if(string.indexOf('warning')==-1){
+			//if(string.indexOf('warning')==-1){
 				update_feed("Your friend accepted your swap request!");
 				console.log('test swap accepted: ' + swapped);
+				console.log(string);
 				if(swapped%2===0){
 					sess.giveControl(1);
 	 			} else {
 					sess.giveControl(0);
 				}
 				swapped++;
-			}
+			//}
 		}
 
 	        // control swap denied
