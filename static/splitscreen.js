@@ -153,10 +153,11 @@ window.addEventListener('message', function(e){
 		// control swap accepted
                if (string.match(/(swap_accepted)/)) {
 			update_feed("Your friend accepted your swap request!");
+			console.log('test: ' + swapped);
 			if(!swapped%2){
 		        	sess.giveControl(0);
  			} else {
-				sess.giveControl(0);
+				sess.giveControl(1);
 			}
 			swapped++;
 		}
