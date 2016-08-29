@@ -8,6 +8,7 @@ $(document).ready(function(){
 
 	// resizable
 	$('#stretch').click(function(){
+		$("#ignore").hide();
 		if($('#stretch').html()=="Stretch"){
 			if(!splitter){
 				$('#ifrm1, #ifrm2').css("width", "100%");
