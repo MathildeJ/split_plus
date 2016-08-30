@@ -63,9 +63,13 @@ function swapRequest() {
 
 // return button
 function previous_page(){
-  console.log('referrer?: ' + document.referrer);
-  document.getElementById("ifrm1").contentWindow.history.back();
-  //sess.relocate(document.referrer);  
+  frame = document.getElementById("ifrm1").contentWindow;
+  console.log('referrer:' + document.referrer);
+  console.log('frame history (should be >0): ' + frame.history.length);
+  //frame.contentWindow.history.back();
+  var previous_url = history[history.indexOf(lastUrl)-1];
+  console.log(previous_url);
+  sess.relocate(previous_url);  
 }
 
 // ignore/acknowledge friend button
