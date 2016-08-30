@@ -137,4 +137,5 @@ p {
 
 img {
   border: 0;
+  visibility: hidden;
 }
