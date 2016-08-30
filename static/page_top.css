@@ -30,7 +30,7 @@ body {
 	display: inline-block;
 	width: 400px;
 	position: fixed;
-	left: -3%;
+	left: -2.5%;
 	visibility: hidden; 
 	align-items: flex-start;
 	margin-right: 10px;
@@ -126,8 +126,7 @@ p {
 #return {
   position: fixed;
   margin-top: 5px;
-  margin-right: 5px;
-  left: 1px;
+  left: 1%;
   height: 23px;
   width: 23px;
   background: transparent;
