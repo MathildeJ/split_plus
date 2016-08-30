@@ -80,7 +80,7 @@ body {
 }
 
 #menu_right {
-	visibility: hidden;
+	/*visibility: hidden;*/ /*visible for local testing*/
 }
 
 #nav {
