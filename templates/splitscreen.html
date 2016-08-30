@@ -68,13 +68,12 @@ window.addEventListener('DOMContentLoaded', function() {
 			sess = session;	
 		})
 		.on('relocated', function(session, event) {
+			urls.push(event.url);
 			// send message to the other side
 			var frame = document.getElementById('ifrm2').contentWindow;
 			frame.postMessage(JSON.stringify({"command": "message", "data": "The leader relocated to: " + event.url}), '*');
-			console.log('new url: ' + event.url);
 			// store current url
 			lastUrl = event.url;
-			urls.push(event.url);
 		})
 		.on('viewer_joined', function(session, event) {
 			// update feed
