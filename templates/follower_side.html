@@ -28,24 +28,17 @@
 
 
 <script>
-(function(s,u,r,f,l,y){s[f]=s[f]||{init:function(){s[f].q=arguments}};
-l=u.createElement(r);y=u.getElementsByTagName(r)[0];l.async=1;
-l.src='https://surfly.com/surfly.js';y.parentNode.insertBefore(l,y);})
-(window,document,'script','Surfly');
-</script>
-
-<script>
 var sess;
 var swapped=0;
 
-var settings = {widgetkey:'b84defc4621441ecae5eb10bdec1cb5a', block_until_agent_joins: false, ui_off: true, set_to_smallest: false, drawing_color: "green"};
+var settings = {widgetkey:'b84defc4621441ecae5eb10bdec1cb5a', block_until_agent_joins: false, ui_off: true, set_to_smallest: false, drawing_color: "green", url:"https://www.duckduckgo.com"};
 window.addEventListener('DOMContentLoaded', function() {
   Surfly.init(settings, function(init) {
     if (init.success) {
 	if(!Surfly.currentSession){
-	    	s = Surfly.session();
-	        s._settings.url = "https://www.duckduckgo.com";
-		s.on('session_started', function(session) {
+	    	//s = Surfly.session();
+	        //s._settings.url = "https://www.duckduckgo.com";
+		Surfly.session().on('session_started', function(session) {
                         // get the follower link
 			var retrievedLink = session.followerLink;
 			var frame = document.getElementById('ifrm2').contentWindow;
@@ -107,8 +100,8 @@ window.addEventListener('DOMContentLoaded', function() {
 	<!-- the frame in which the follower link will be opened -->
 	<div class="box"><iframe id="ifrm2" src="" height="700" width="49%" align='right'></iframe></div>
 </div>
-<!-- the reaction is seen in this iframe -->
-<div class="box"><iframe align='left' id="reaction" src="" height="300" width="300"></iframe></div>
+<!-- the reaction image -->
+<div class="box"><img align='left' id="reaction" src="" height="300" width="300"></img></div>
 
 <div id="dialog" title="Control swap request" style="display:none;">
   <p>You asked for a control swap, waiting for your friend's response...</p>

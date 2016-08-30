@@ -1,12 +1,17 @@
+(function(s,u,r,f,l,y){s[f]=s[f]||{init:function(){s[f].q=arguments}};
+l=u.createElement(r);y=u.getElementsByTagName(r)[0];l.async=1;
+l.src='https://surfly.com/surfly.js';y.parentNode.insertBefore(l,y);})
+(window,document,'script','Surfly');
+
 // navigate to a new url
 function navigate(){
 	var url = document.getElementById('url').value;
 	// if url is empty and there is a placeholder, use placeholder instead
-	if(url=="" && document.getElementById('url').placeholder){
+	if(url==="" && document.getElementById('url').placeholder){
 		url = document.getElementById('url').placeholder;
 	}
 	// add 'https' to the link if it's not already there
-	if(url.indexOf('https')==-1){
+	if(url.indexOf('https')===-1){
 		url = 'https://' + url;
 	}
 	if(!swapped%2){
@@ -95,18 +100,15 @@ window.addEventListener('message', function(e){
 	
 		// update placeholder when follower relocates
 		if(string.indexOf("The follower relocated")!==-1||string.indexOf("The leader relocated")!==-1){
-			console.log('string:' + string);
 			var index = string.indexOf('data');
 			var indexEnd = string.indexOf('origin');	
 			var info = string.substring(index+9, indexEnd-5);
-			console.log('info: ' + info);
 			if(info.charAt(0)==='T'){
 				if(info.indexOf('https')!==-1){
 					var new_ph = info.substring(info.indexOf('https')+8);
 				} else {
 					var new_ph = info.substring(info.indexOf('http')+7);
 				}
-				console.log('new placeholder: ' + new_ph);
 				document.getElementById('url').placeholder = new_ph;
 			}
 		}
