@@ -95,18 +95,18 @@ window.addEventListener('message', function(e){
 	
 		// update placeholder when follower relocates
 		if(string.indexOf("The follower relocated")!==-1||string.indexOf("The leader relocated")!==-1){
+			console.log('string:' + string);
 			var index = string.indexOf('data');
 			var indexEnd = string.indexOf('origin');	
 			var info = string.substring(index+9, indexEnd-5);
-			console.log(info);
+			console.log('info: ' + info);
 			if(info.charAt(0)==='T'){
-				var new_ph="";
 				if(info.indexOf('https')!==-1){
-					new_ph = info.substring(info.indexOf('https')+8);
+					var new_ph = info.substring(info.indexOf('https')+8);
 				} else {
-					new_ph = info.substring(info.indexOf('http')+7);
+					var new_ph = info.substring(info.indexOf('http')+7);
 				}
-				console.log(new_ph);
+				console.log('new placeholder: ' + new_ph);
 				document.getElementById('url').placeholder = new_ph;
 			}
 		}

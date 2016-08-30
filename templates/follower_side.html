@@ -61,6 +61,7 @@ window.addEventListener('DOMContentLoaded', function() {
 		.on('relocated', function(session, event) {
 			var frame = document.getElementById('ifrm1').contentWindow;
 			frame.postMessage(JSON.stringify({"command": "message", "data": "The follower relocated to: " + event.url }), '*');
+			console.log('new url: ' + event.url);
 		})
 		.on('viewer_joined', function(session, event) {
 			update_feed("Someone joined your session!");
