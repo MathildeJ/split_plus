@@ -98,8 +98,15 @@ window.addEventListener('message', function(e){
 			var index = string.indexOf('data');
 			var indexEnd = string.indexOf('origin');	
 			var info = string.substring(index+9, indexEnd-5);
+			console.log(info);
 			if(info.charAt(0)==='T'){
-				var new_ph = info.substring(info.indexOf('https')+8);
+				var new_ph;
+				if(info.indexOf('https')){
+					new_ph = info.substring(info.indexOf('https')+8);
+				} else {
+					new_ph = info.substring(info.indexOf('http')+7);
+				}
+				console.log(new_ph);
 				document.getElementById('url').placeholder = new_ph;
 			}
 		}
