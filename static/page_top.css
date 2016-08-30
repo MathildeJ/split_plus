@@ -124,8 +124,8 @@ p {
 }
  
 #return {
-       position: fixed;
-       left: -5%;
+       position: relative;
+       left: -10%;
        margin-top: 5px;
        margin-right: 5px;
        height: 27px;
