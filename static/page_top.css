@@ -106,11 +106,11 @@ body {
        background-size: cover;
 }
 #badReaction {
-       background-image:url('./thumb_down.png');
+  background-image:url('./thumb_down.png');
 }
 
 #goodReaction {
-       background-image:url('./thumb_up.png'); 
+  background-image:url('./thumb_up.png'); 
 }
  
 p {
@@ -123,5 +123,15 @@ p {
   position: relative;
 }
  
-
+#return {
+       position: relative;
+       margin-top: 5px;
+       margin-right: 5px;
+       height: 27px;
+       width: 27px;
+       background: transparent;
+       border: none;
+       background-image:url('./return_arrow.png');
+       background-size: cover;
+}
 
