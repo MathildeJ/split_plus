@@ -64,6 +64,7 @@ function swapRequest() {
 // return button
 function previous_page(){
   console.log('referrer?: ' + document.referrer);
+  console.log(lastUrl);
   //sess.relocate(document.referrer);  
 }
 
