@@ -30,7 +30,7 @@ body {
 	display: inline-block;
 	width: 400px;
 	position: fixed;
-	left: -2.5%;
+	left: -2.8%;
 	visibility: hidden; 
 	align-items: flex-start;
 	margin-right: 10px;
@@ -80,7 +80,7 @@ body {
 }
 
 #menu_right {
-	/*visibility: hidden;*/ /*visible for local testing*/
+	visibility: hidden;
 }
 
 #nav {
