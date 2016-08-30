@@ -36,6 +36,7 @@ l.src='https://surfly.com/surfly.js';y.parentNode.insertBefore(l,y);})
 <script>
 var sess;
 var swapped=0;
+var urls=["https://www.duckduckgo.com"];
 
 var settings = {widgetkey:'b84defc4621441ecae5eb10bdec1cb5a', block_until_agent_joins: false, ui_off: true, set_to_smallest: false, drawing_color: "green", url:"https://www.duckduckgo.com"};
 window.addEventListener('DOMContentLoaded', function() {
@@ -58,6 +59,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			sess = session;
 	     	})
 		.on('relocated', function(session, event) {
+			urls.push(event.url);
 			var frame = document.getElementById('ifrm1').contentWindow;
 			frame.postMessage(JSON.stringify({"command": "message", "data": "The follower relocated to: " + event.url }), '*');
 			console.log('new url: ' + event.url);
@@ -84,9 +86,11 @@ window.addEventListener('DOMContentLoaded', function() {
 	<button class="button" id="ignore" onclick="ignoreFriend()">Ignore Friend</button>
 	<button id="goodReaction" class="reaction" onclick="goodReaction()"></button>
 	<button id="badReaction" class="reaction" onclick="badReaction()"></button>
+	<button id="return" onclick="previous_page()"></button>
 	<div id="feed">
 		<p id="news_feed"></p>
 	</div>
+
 	<div id="form_wrapper">
 		<form id="nav" action="" method="post">
 			<label style="float:left">
