@@ -42,9 +42,9 @@ window.addEventListener('DOMContentLoaded', function() {
   Surfly.init(settings, function(init) {
     if (init.success) {
 	if(!Surfly.currentSession){
-	    	//s = Surfly.session();
-	        //s._settings.url = "https://www.duckduckgo.com";
-		Surfly.session().on('session_started', function(session) {
+	    	s = Surfly.session();
+	        s._settings.url = "https://www.duckduckgo.com";
+		s.on('session_started', function(session) {
                         // get the follower link
 			var retrievedLink = session.followerLink;
 			var frame = document.getElementById('ifrm2').contentWindow;
