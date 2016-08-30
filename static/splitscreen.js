@@ -1,5 +1,3 @@
-var frame = document.getElementById("ifrm1").contentWindow;
-
 // navigate to a new url
 function navigate() {
     var url = document.getElementById('url').value;
@@ -14,6 +12,7 @@ function navigate() {
     if (!swapped % 2) {
         sess.relocate(url);
     } else {
+        frame = document.getElementById("ifrm1").contentWindow;
         frame.postMessage(JSON.stringify({
             "command": "message",
             "data": "relocation_swap" + url
@@ -34,6 +33,7 @@ function update_feed(text) {
 
 // send a positive message to iframe1 
 function goodReaction() {
+    frame = document.getElementById("ifrm1").contentWindow;
     frame.postMessage(JSON.stringify({
         "command": "message",
         "data": "good"
@@ -43,6 +43,7 @@ function goodReaction() {
 
 // send a negative message to iframe1
 function badReaction() {
+    frame = document.getElementById("ifrm1").contentWindow;
     frame.postMessage(JSON.stringify({
         "command": "message",
         "data": "bad"
@@ -53,6 +54,7 @@ function badReaction() {
 // swap request
 function swapRequest() {
     $("#dialog").dialog("open");
+    frame = document.getElementById("ifrm1").contentWindow;
     frame.postMessage(JSON.stringify({
         "command": "message",
         "data": "swap_request"
