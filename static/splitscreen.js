@@ -62,7 +62,7 @@ function swapRequest() {
 }
 
 // return button
-function return(){
+function previous_page(){
   console.log('referrer?: ' + document.referrer);
   //sess.relocate(document.referrer);  
 }
