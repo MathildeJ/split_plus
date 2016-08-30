@@ -112,14 +112,6 @@ body {
 #goodReaction {
        background-image:url('./thumb_up.png'); 
 }
-
-#reaction {
-	display: block; 
-	position: absolute; 
-	frameBorder:'0'; 
-	visibility:hidden;
-        border:0 none;
-}
  
 p {
   margin-top: 8px;
