@@ -63,11 +63,11 @@ function swapRequest() {
 
 // return button
 function previous_page(){
-  console.log(lastUrl);
-  console.log(urls.indexOf(lastUrl));
-  var previous_url = urls[urls.indexOf(lastUrl)-1];
+  var index = 1;
+  if(urls.indexOf(lastUrl)>2){index=urls.indexOf(lastUrl);}
+  var previous_url = urls[index-1];
   console.log(previous_url);
-  //sess.relocate(previous_url);  
+  sess.relocate(previous_url);  
 }
 
 // ignore/acknowledge friend button
