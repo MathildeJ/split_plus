@@ -63,14 +63,11 @@ function swapRequest() {
 
 // return button
 function previous_page(){
-  frame = document.getElementById("ifrm1").contentWindow;
   console.log('referrer:' + document.referrer);
-  console.log('frame history (should be >0): ' + frame.history.length);
-  //frame.contentWindow.history.back();
   console.log(urls.indexOf(lastUrl));
   var previous_url = urls[urls.indexOf(lastUrl)-1];
   console.log(previous_url);
-  //sess.relocate(previous_url);  
+  sess.relocate(previous_url);  
 }
 
 // ignore/acknowledge friend button
