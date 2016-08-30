@@ -39,7 +39,7 @@ var sess;
 var inviteLink;
 var lastUrl;
 var swapped=0;
-var history=["https://www.duckduckgo.com"];
+var urls=["https://www.duckduckgo.com"];
 
 var settings = {widgetkey:'b84defc4621441ecae5eb10bdec1cb5a', block_until_agent_joins: false, ui_off: true, set_to_smallest: false, drawing_color: "red"};
 window.addEventListener('DOMContentLoaded', function() {
@@ -74,7 +74,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			console.log('new url: ' + event.url);
 			// store current url
 			lastUrl = event.url;
-			history.push(event.url);
+			urls.push(event.url);
 		})
 		.on('viewer_joined', function(session, event) {
 			// update feed
