@@ -1,12 +1,12 @@
-@media screen and (min-height: 768px) {
+@media screen and (min-device-height: 750px) {
   #ifrm1, #ifrm2{
     height:700px;
   }
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-device-height: 600px) {
   #ifrm1, #ifrm2{
-    height:600px;
+    height:550px;
   }
 }
 

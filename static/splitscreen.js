@@ -62,12 +62,14 @@ function swapRequest() {
 }
 
 // return button
-function previous_page(){
+function go_back(){
   var index = 1;
   if(urls.indexOf(lastUrl)>2){index=urls.indexOf(lastUrl);}
   console.log(urls.indexOf(lastUrl));
   console.log(urls[index-1]);
-  sess.relocate(urls[index-1]);  
+  console.log(sess);
+  //sess.relocate(urls[index-1]);  
+  //return false;
 }
 
 // ignore/acknowledge friend button

@@ -64,6 +64,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         window.history.pushState('followerUrl',"", inviteLink);
                         // make the nav bar visible
 			document.getElementById('form_wrapper').style.visibility = "visible";
+			document.getElementById('return').style.visibility = "visible";
 			// store session
 			sess = session;	
 		})
@@ -120,8 +121,8 @@ window.addEventListener('DOMContentLoaded', function() {
 				<input id="url" type="text" name="url" placeholder="duckduckgo.com"/>
 			</label>
 			<label>
-			       <input type="button" class="button" id="submit_button" onclick=navigate() value="Go!" />
-			       <button id="return" onclick="previous_page()"></button>
+			       <input type="button" class="button" id="submit_button" onclick="navigate()" value="Go!" />
+			       <button id="return" onclick="go_back()"></button>
 			</label>
 		</form>
 	</div>

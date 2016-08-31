@@ -133,6 +133,7 @@ p {
   border: none;
   background-size: cover;
   background-image:url('./return_arrow.png');
+  visibility: hidden;
 }
 
 img {

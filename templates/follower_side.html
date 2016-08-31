@@ -36,8 +36,8 @@ l.src='https://surfly.com/surfly.js';y.parentNode.insertBefore(l,y);})
 <script>
 var sess;
 var swapped=0;
-var urls=["https://www.duckduckgo.com"];
-var lastUrl;
+//var urls=["https://www.duckduckgo.com"];
+//var lastUrl;
 
 var settings = {widgetkey:'b84defc4621441ecae5eb10bdec1cb5a', block_until_agent_joins: false, ui_off: true, set_to_smallest: false, drawing_color: "green", url:"https://www.duckduckgo.com"};
 window.addEventListener('DOMContentLoaded', function() {
@@ -52,19 +52,17 @@ window.addEventListener('DOMContentLoaded', function() {
 			var frame = document.getElementById('ifrm2').contentWindow;
 			// send link to frame
 			frame.postMessage(JSON.stringify({"command": "message", "data": retrievedLink}), '*');
-			// make the nav bar visible
-			document.getElementById('form_wrapper').style.visibility = "visible";
 			// make menu elements visible
 			document.getElementById('menu').style.visibility = "visible";
 			// store session
 			sess = session;
 	     	})
 		.on('relocated', function(session, event) {
-			urls.push(event.url);
+			//urls.push(event.url);
 			var frame = document.getElementById('ifrm1').contentWindow;
 			frame.postMessage(JSON.stringify({"command": "message", "data": "The follower relocated to: " + event.url }), '*');
 			// store current url
-			lastUrl = event.url;
+			//lastUrl = event.url;
 		})
 		.on('viewer_joined', function(session, event) {
 			update_feed("Someone joined your session!");
@@ -98,8 +96,8 @@ window.addEventListener('DOMContentLoaded', function() {
 				<input id="url" type="text" name="url" placeholder="duckduckgo.com"/>
 			</label>
 			<label>
-			       <input type="button" class="button" id="submit_button" onclick=navigate() value="Go!" />
-	 		       <button id="return" onclick="previous_page()"></button>
+			       <input type="button" class="button" id="submit_button" onclick="navigate()" value="Go!" />
+	 		       <button id="return" onclick="go_back()"></button>
 			</label>
 		</form>
 	</div>
