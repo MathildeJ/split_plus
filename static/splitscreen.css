@@ -4,9 +4,9 @@
   }
 }
 
-@media screen and (min-height: 600px) {
+@media screen and (max-height: 600px) {
   #ifrm1, #ifrm2{
-    height:550px;
+    height:600px;
   }
 }
 

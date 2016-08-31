@@ -65,6 +65,8 @@ function swapRequest() {
 function previous_page(){
   var index = 1;
   if(urls.indexOf(lastUrl)>2){index=urls.indexOf(lastUrl);}
+  console.log(urls.indexOf(lastUrl));
+  console.log(urls[index-1]);
   sess.relocate(urls[index-1]);  
 }
 
