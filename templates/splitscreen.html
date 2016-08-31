@@ -98,6 +98,16 @@ window.addEventListener('DOMContentLoaded', function() {
  });
 </script>
 
+<script>
+// return button
+function go_back(){
+  var index = 1;
+  if(urls.indexOf(lastUrl)>2){index=urls.indexOf(lastUrl);}
+  console.log(urls.indexOf(lastUrl));
+  console.log(urls[index-1]);
+  console.log(sess);
+}
+</script>
 </head>
 
 <body>

@@ -60,7 +60,7 @@ function swapRequest() {
         "data": "swap_request"
     }), '*');
 }
-
+/*
 // return button
 function go_back(){
   var index = 1;
@@ -70,7 +70,7 @@ function go_back(){
   console.log(sess);
   //sess.relocate(urls[index-1]);  
   //return false;
-}
+}*/
 
 // ignore/acknowledge friend button
 function ignoreFriend() {

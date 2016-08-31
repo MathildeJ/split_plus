@@ -52,6 +52,8 @@ window.addEventListener('DOMContentLoaded', function() {
 			var frame = document.getElementById('ifrm2').contentWindow;
 			// send link to frame
 			frame.postMessage(JSON.stringify({"command": "message", "data": retrievedLink}), '*');
+			// make the nav bar visible
+			document.getElementById('form_wrapper').style.visibility = "visible";
 			// make menu elements visible
 			document.getElementById('menu').style.visibility = "visible";
 			// store session
@@ -97,7 +99,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			</label>
 			<label>
 			       <input type="button" class="button" id="submit_button" onclick="navigate()" value="Go!" />
-	 		       <button id="return" onclick="go_back()"></button>
+	 		       <!--<button id="return" onclick="previous_page()"></button>-->
 			</label>
 		</form>
 	</div>
@@ -123,13 +125,10 @@ window.addEventListener('DOMContentLoaded', function() {
 
 <script>
 // get the current url and the follower link
-var pageUrl  = document.location.href;
-console.log(pageUrl);
+pageUrl  = document.location.href;
 var idIndex = pageUrl.indexOf(".com");
 var sessionID = pageUrl.substring(idIndex+4);
-console.log(sessionID);
 var fullUrl =  "https://surfly.com".concat(sessionID);
-console.log(fullUrl);
 // set the url of the first frame to the follower link
 document.getElementById('ifrm2').src = fullUrl;
 </script>
