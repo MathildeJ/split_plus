@@ -1,3 +1,15 @@
+@media screen and (min-height: 768px) {
+  #ifrm1, #ifrm2{
+    height:700px;
+  }
+}
+
+@media screen and (min-height: 600px) {
+  #ifrm1, #ifrm2{
+    height:550px;
+  }
+}
+
 #ifrm1{
   display: inline-block;
   border-top: red 3px solid;
